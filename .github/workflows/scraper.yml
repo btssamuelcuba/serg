@@ -17,6 +17,12 @@ on:
           Ejemplos: "one-piece"  |  "one-piece naruto"
         required: false
         default: ""
+      episodes:
+        description: >
+          Total de episodios a scrapear (solo cuando uses un slug único).
+          Ejemplo: "79"  — si se omite, el scraper detecta los episodios automáticamente.
+        required: false
+        default: ""  
       pages:
         description: >
           Página o rango de páginas a scrapear (opcional, solo con letters).
@@ -91,8 +97,14 @@ jobs:
           SLUGS="${{ github.event.inputs.slugs }}"
           PAGES="${{ github.event.inputs.pages }}"
 
+          EPISODES="${{ github.event.inputs.episodes }}"
+
           if [ -n "$SLUGS" ]; then
-            python animeav1_catalog_scraper.py --slugs $SLUGS
+            if [ -n "$EPISODES" ]; then
+              python animeav1_catalog_scraper.py --slugs $SLUGS --episodes "$EPISODES"
+            else
+              python animeav1_catalog_scraper.py --slugs $SLUGS
+            fi  
           elif [ -n "$PAGES" ]; then
             python animeav1_catalog_scraper.py --letters $LETTERS --pages "$PAGES"
           else
