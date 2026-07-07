@@ -1,0 +1,747 @@
+[
+  {
+    "slug": "yui",
+    "title": "yui",
+    "alt_title": "",
+    "type": "",
+    "year": "",
+    "season": "",
+    "status": "",
+    "genres": [],
+    "synopsis": "",
+    "score": "0",
+    "votes": "0",
+    "cover_url": "",
+    "backdrop_url": "",
+    "episodes": [
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "1",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/1",
+        "local_url": "/ver/yui/1",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:47:22.867643+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "2",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/2",
+        "local_url": "/ver/yui/2",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:47:31.409671+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "3",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/3",
+        "local_url": "/ver/yui/3",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:47:39.954998+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "4",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/4",
+        "local_url": "/ver/yui/4",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:47:48.490156+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "5",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/5",
+        "local_url": "/ver/yui/5",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:47:57.024304+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "6",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/6",
+        "local_url": "/ver/yui/6",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:05.555108+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "7",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/7",
+        "local_url": "/ver/yui/7",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:14.085447+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "8",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/8",
+        "local_url": "/ver/yui/8",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:22.616204+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "9",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/9",
+        "local_url": "/ver/yui/9",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:31.156633+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "10",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/10",
+        "local_url": "/ver/yui/10",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:39.688924+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "11",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/11",
+        "local_url": "/ver/yui/11",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:48.218369+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "12",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/12",
+        "local_url": "/ver/yui/12",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:48:56.748084+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "13",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/13",
+        "local_url": "/ver/yui/13",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:05.284921+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "14",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/14",
+        "local_url": "/ver/yui/14",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:13.818557+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "15",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/15",
+        "local_url": "/ver/yui/15",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:22.351632+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "16",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/16",
+        "local_url": "/ver/yui/16",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:30.894556+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "17",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/17",
+        "local_url": "/ver/yui/17",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:39.437775+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "18",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/18",
+        "local_url": "/ver/yui/18",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:47.967175+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "19",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/19",
+        "local_url": "/ver/yui/19",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:49:56.502300+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "20",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/20",
+        "local_url": "/ver/yui/20",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:05.030945+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "21",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/21",
+        "local_url": "/ver/yui/21",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:13.558245+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "22",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/22",
+        "local_url": "/ver/yui/22",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:22.093860+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "23",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/23",
+        "local_url": "/ver/yui/23",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:30.631158+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "24",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/24",
+        "local_url": "/ver/yui/24",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:39.158303+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "25",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/25",
+        "local_url": "/ver/yui/25",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:47.694851+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "26",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/26",
+        "local_url": "/ver/yui/26",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:50:56.223188+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "27",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/27",
+        "local_url": "/ver/yui/27",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:04.762603+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "28",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/28",
+        "local_url": "/ver/yui/28",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:13.291753+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "29",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/29",
+        "local_url": "/ver/yui/29",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:21.823177+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "30",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/30",
+        "local_url": "/ver/yui/30",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:30.351987+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "31",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/31",
+        "local_url": "/ver/yui/31",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:38.890311+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "32",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/32",
+        "local_url": "/ver/yui/32",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:47.437264+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "33",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/33",
+        "local_url": "/ver/yui/33",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:51:55.995699+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "34",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/34",
+        "local_url": "/ver/yui/34",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:04.525627+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "35",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/35",
+        "local_url": "/ver/yui/35",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:13.058253+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "36",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/36",
+        "local_url": "/ver/yui/36",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:21.589685+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "37",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/37",
+        "local_url": "/ver/yui/37",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:30.120944+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "38",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/38",
+        "local_url": "/ver/yui/38",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:38.649611+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "39",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/39",
+        "local_url": "/ver/yui/39",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:47.190839+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "40",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/40",
+        "local_url": "/ver/yui/40",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:52:55.725971+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "41",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/41",
+        "local_url": "/ver/yui/41",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:04.261990+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "42",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/42",
+        "local_url": "/ver/yui/42",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:12.793993+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "43",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/43",
+        "local_url": "/ver/yui/43",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:21.327657+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "44",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/44",
+        "local_url": "/ver/yui/44",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:29.857985+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "45",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/45",
+        "local_url": "/ver/yui/45",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:38.404501+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "46",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/46",
+        "local_url": "/ver/yui/46",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:46.935599+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "47",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/47",
+        "local_url": "/ver/yui/47",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:53:55.473028+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "48",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/48",
+        "local_url": "/ver/yui/48",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:54:04.009536+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "49",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/49",
+        "local_url": "/ver/yui/49",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:54:12.540655+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "50",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/50",
+        "local_url": "/ver/yui/50",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:54:21.074727+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "51",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/51",
+        "local_url": "/ver/yui/51",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:54:29.618143+00:00"
+      },
+      {
+        "slug": "yui",
+        "title": "yui",
+        "episode": "52",
+        "thumbnail": "",
+        "source_url": "https://animeav1.com/media/yui/52",
+        "local_url": "/ver/yui/52",
+        "time_ago": "",
+        "servers": {
+          "SUB": [],
+          "DUB": []
+        },
+        "scraped_at": "2026-07-07T19:54:38.151770+00:00"
+      }
+    ]
+  }
+]
