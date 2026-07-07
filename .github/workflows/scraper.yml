@@ -3,24 +3,34 @@ name: AnimeAV1 Catalog Scraper
 on:
   # ── Disparo manual con elección de letras ──────────────────
   workflow_dispatch:
+
     inputs:
       letters:
         description: >
           Letras a procesar (separadas por espacios).
           Ejemplos: "A"  |  "A B C"  |  "0"  |  "ALL"
-        required: true
-        default: "A"
-      pages:
-        description: >
-          Página o rango de páginas a scrapear (opcional).
-          Ejemplos: "1"  |  "1-7"  |  vacío = todas las páginas
         required: false
         default: ""
+      slugs:
+        description: >
+          Slugs directos a scrapear (separados por espacios).
+          Ejemplos: "one-piece"  |  "one-piece naruto"
+        required: false
+        default: ""
+      pages:
+        description: >
+          Página o rango de páginas a scrapear (opcional, solo con letters).
+          Ejemplos: "1"  |  "1-7"  |  vacío = todas las páginas
+        required: false
+        default: ""    
 
   # ── Programación automática (opcional) ─────────────────────
   # schedule:
   #   # Ejecuta cada domingo a las 03:00 UTC procesando todo el catálogo
   #   - cron: "0 3 * * 0"
+
+  
+
 
 jobs:
   scrape:
@@ -74,16 +84,20 @@ jobs:
             checkpoints-${{ github.event.inputs.letters }}-
 
       # ── 6. Ejecutar el scraper ──────────────────────────────
+
       - name: Run catalog scraper
         run: |
-          # Convertir el input en argumentos --letters A B C ...
           LETTERS="${{ github.event.inputs.letters }}"
+          SLUGS="${{ github.event.inputs.slugs }}"
           PAGES="${{ github.event.inputs.pages }}"
-          if [ -n "$PAGES" ]; then
+
+          if [ -n "$SLUGS" ]; then
+            python animeav1_catalog_scraper.py --slugs $SLUGS
+          elif [ -n "$PAGES" ]; then
             python animeav1_catalog_scraper.py --letters $LETTERS --pages "$PAGES"
           else
             python animeav1_catalog_scraper.py --letters $LETTERS
-          fi
+          fi    
 
       # ── 7. Guardar checkpoints en caché ─────────────────────
       #   Siempre guardamos aunque el step anterior haya fallado
@@ -119,4 +133,7 @@ jobs:
           git add catalog/
           # Hace el commit si encuentra archivos nuevos o modificados, si no hay cambios no rompe el flujo
           git commit -m "Automated update: JSON catalog updates [skip ci]" || echo "No new changes to commit"
+          # Pull con rebase antes de push para evitar el error "fetch first"
+          # cuando otro run o commit llegó al remote mientras este corría
+          git pull --rebase origin main
           git push
