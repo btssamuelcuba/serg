@@ -763,9 +763,7 @@ async def scrape_episodes_servers_for_ficha(page, ficha: dict, ficha_checkpoint:
     log(f"  📺 {total} episodios totales, {len(pending)} pendientes")
 
     result           = list(ficha_checkpoint.get(slug, {}).get("episodes_data", []))
-    processed_this_run = 0
-
-    for ep in pending:
+for ep in pending:
 
         num  = ep["num"]
         href = ep.get("href", "")
