@@ -1,0 +1,122 @@
+name: AnimeAV1 Catalog Scraper
+
+on:
+  # ── Disparo manual con elección de letras ──────────────────
+  workflow_dispatch:
+    inputs:
+      letters:
+        description: >
+          Letras a procesar (separadas por espacios).
+          Ejemplos: "A"  |  "A B C"  |  "0"  |  "ALL"
+        required: true
+        default: "A"
+      pages:
+        description: >
+          Página o rango de páginas a scrapear (opcional).
+          Ejemplos: "1"  |  "1-7"  |  vacío = todas las páginas
+        required: false
+        default: ""
+
+  # ── Programación automática (opcional) ─────────────────────
+  # schedule:
+  #   # Ejecuta cada domingo a las 03:00 UTC procesando todo el catálogo
+  #   - cron: "0 3 * * 0"
+
+jobs:
+  scrape:
+    name: Scrape catalog letters "${{ github.event.inputs.letters }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 360   # 6 horas máximo por run
+
+    # 🟢 NUEVO: Otorga permisos automáticos de escritura al flujo para usar Git sin tokens manuales
+    permissions:
+      contents: write
+
+    env:
+      WP_URL:          ${{ secrets.WP_URL }}
+      WP_USER:         ${{ secrets.WP_USER }}
+      WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+
+    steps:
+      # ── 1. Checkout del repositorio ─────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Python ──────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # ── 3. Dependencias Python ──────────────────────────────
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install playwright requests
+
+      # ── 4. Instalar navegador Chromium para Playwright ──────
+      - name: Install Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      # ── 5. Restaurar checkpoints desde caché ────────────────
+      #   Clave dinámica por letras para no mezclar estados
+      - name: Restore checkpoints cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            catalog_checkpoint.json
+            az_checkpoint.json
+          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.run_id }}
+          restore-keys: |
+            checkpoints-${{ github.event.inputs.letters }}-
+
+      # ── 6. Ejecutar el scraper ──────────────────────────────
+      - name: Run catalog scraper
+        run: |
+          # Convertir el input en argumentos --letters A B C ...
+          LETTERS="${{ github.event.inputs.letters }}"
+          PAGES="${{ github.event.inputs.pages }}"
+          if [ -n "$PAGES" ]; then
+            python animeav1_catalog_scraper.py --letters $LETTERS --pages "$PAGES"
+          else
+            python animeav1_catalog_scraper.py --letters $LETTERS
+          fi
+
+      # ── 7. Guardar checkpoints en caché ─────────────────────
+      #   Siempre guardamos aunque el step anterior haya fallado
+      - name: Save checkpoints cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            catalog_checkpoint.json
+            az_checkpoint.json
+          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.run_id }}
+
+      # ── 8. Subir checkpoints como artefacto ─────────────────
+      #   Permite descargarlos o inspeccionarlos desde la UI
+      - name: Upload checkpoint artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkpoints-${{ github.run_id }}
+          path: |
+            catalog_checkpoint.json
+            az_checkpoint.json
+          retention-days: 7
+          if-no-files-found: ignore
+
+      # ── 9. Guardar los JSON generados en el repositorio ──────
+      # 🟢 NUEVO: Configura Git local, detecta la carpeta catalog y sube los cambios al repo
+      - name: Commit and Push generated JSONs
+        if: success() # Solo se ejecuta si el scraper terminó correctamente
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add catalog/
+          # Hace el commit si encuentra archivos nuevos o modificados, si no hay cambios no rompe el flujo
+          git commit -m "Automated update: JSON catalog updates [skip ci]" || echo "No new changes to commit"
+          git push
