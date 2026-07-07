@@ -970,9 +970,21 @@ def parse_args():
             "Crea slugs/{slug}.json para cada uno."
         ),
     )
+
+    parser.add_argument(
+        "--episodes",
+        type=int,
+        default=None,
+        help=(
+            "Total de episodios a scrapear directamente por número (solo con --slugs).\n"
+            "Ejemplo: --episodes 79\n"
+            "Genera URLs del tipo /media/{slug}/1, /media/{slug}/2, ... /media/{slug}/N.\n"
+            "Si no se especifica, el scraper detecta los episodios desde la página del anime."
+        ),
+    )
     parser.add_argument(
         "--pages",
-        default=None,
+        default=None,    
         help=(
             "Página o rango de páginas a scrapear dentro de las letras indicadas.\n"
             "Solo aplica al modo --letters (se ignora en --slugs).\n"
@@ -1101,15 +1113,43 @@ async def main():
             log(f"\n{'─' * 60}")
             log(f"▶ Slug directo [{idx}/{len(slugs_direct)}]: {slug}")
 
-            ficha = await scrape_anime_ficha(ficha_page, slug)
-            if not ficha["title"]:
-                log(f"  ⚠ No se pudo obtener ficha para '{slug}' — saltando")
-                continue
+            if args.episodes:
+                # Construir la lista de episodios directamente por número sin visitar la ficha
+                log(f"  ⚡ Modo directo: {args.episodes} episodios por número")
+                ficha = {
+                    "slug":         slug,
+                    "title":        slug,
+                    "alt_title":    "",
+                    "type":         "",
+                    "year":         "",
+                    "season":       "",
+                    "status":       "",
+                    "genres":       [],
+                    "synopsis":     "",
+                    "score":        "0",
+                    "votes":        "0",
+                    "cover_url":    "",
+                    "backdrop_url": "",
+                    "episodes": [
+                        {
+                            "num":       str(n),
+                            "thumb_url": "",
+                            "href":      f"/media/{slug}/{n}",
+                        }
+                        for n in range(1, args.episodes + 1)
+                    ],
+                }
+            else:
+                ficha = await scrape_anime_ficha(ficha_page, slug)
+                if not ficha["title"]:
+                    log(f"  ⚠ No se pudo obtener ficha para '{slug}' — saltando")
+                    continue
 
             # Scrapear servidores de cada episodio
             episodes_with_servers = await scrape_episodes_servers_for_ficha(
                 ficha_page, ficha, ficha_checkpoint
             )
+
 
             # Reemplazar lista básica por la completa con servidores
             ficha["episodes"] = episodes_with_servers
