@@ -762,8 +762,9 @@ async def scrape_episodes_servers_for_ficha(page, ficha: dict, ficha_checkpoint:
 
     log(f"  📺 {total} episodios totales, {len(pending)} pendientes")
 
-    result           = list(ficha_checkpoint.get(slug, {}).get("episodes_data", []))
-for ep in pending:
+    result = list(ficha_checkpoint.get(slug, {}).get("episodes_data", []))
+
+    for ep in pending:
 
         num  = ep["num"]
         href = ep.get("href", "")
@@ -772,12 +773,12 @@ for ep in pending:
         if not href:
             href = f"{ANIMEAV1_BASE}/media/{slug}/{num}"
 
-        log(f"\n    ── Ep. {num} ({processed_this_run + 1}/{total}) ──")
+        log(f"\n    ── Ep. {num} ──")
         log(f"    🔗 {href[:80]}")
         servers   = await scrape_episode_servers(page, href)
         sub_count = len(servers.get("SUB", []))
         dub_count = len(servers.get("DUB", []))
-        dl_count = len(servers.get("downloads", []))
+        dl_count  = len(servers.get("downloads", []))
         log(f"    ✅ Ep. {num} — {sub_count} SUB, {dub_count} DUB, {dl_count} descargas")
 
         ep_data = {
@@ -793,7 +794,6 @@ for ep in pending:
         }
         result.append(ep_data)
         done_nums.add(num)
-        processed_this_run += 1
 
         ficha_checkpoint[slug] = {
             "title":         ficha.get("title", slug),
