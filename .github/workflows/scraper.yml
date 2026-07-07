@@ -138,14 +138,11 @@ jobs:
       # ── 9. Guardar los JSON generados en el repositorio ──────
       # 🟢 NUEVO: Configura Git local, detecta la carpeta catalog y sube los cambios al repo
       - name: Commit and Push generated JSONs
-        if: success() # Solo se ejecuta si el scraper terminó correctamente
+        if: success()
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add catalog/
-          # Hace el commit si encuentra archivos nuevos o modificados, si no hay cambios no rompe el flujo
+          git add catalog/ slugs/ 2>/dev/null || true
           git commit -m "Automated update: JSON catalog updates [skip ci]" || echo "No new changes to commit"
-          # Pull con rebase antes de push para evitar el error "fetch first"
-          # cuando otro run o commit llegó al remote mientras este corría
           git pull --rebase origin main
           git push
