@@ -78,16 +78,18 @@ jobs:
           playwright install-deps chromium
 
       # ── 5. Restaurar checkpoints desde caché ────────────────
-      #   Clave dinámica por letras para no mezclar estados
+      #   Clave dinámica por letras para no mezclar estado
       - name: Restore checkpoints cache
         uses: actions/cache@v4
         with:
           path: |
             catalog_checkpoint.json
             az_checkpoint.json
-          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.run_id }}
+            ficha_checkpoint.json
+          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.event.inputs.slugs }}-${{ github.run_id }}
           restore-keys: |
-            checkpoints-${{ github.event.inputs.letters }}-
+            checkpoints-${{ github.event.inputs.letters }}-${{ github.event.inputs.slugs }}-
+            checkpoints-${{ github.event.inputs.letters }}-      
 
       # ── 6. Ejecutar el scraper ──────────────────────────────
 
@@ -113,6 +115,7 @@ jobs:
 
       # ── 7. Guardar checkpoints en caché ─────────────────────
       #   Siempre guardamos aunque el step anterior haya fallado
+
       - name: Save checkpoints cache
         if: always()
         uses: actions/cache/save@v4
@@ -120,10 +123,12 @@ jobs:
           path: |
             catalog_checkpoint.json
             az_checkpoint.json
-          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.run_id }}
+            ficha_checkpoint.json
+          key: checkpoints-${{ github.event.inputs.letters }}-${{ github.event.inputs.slugs }}-${{ github.run_id }}    
 
       # ── 8. Subir checkpoints como artefacto ─────────────────
       #   Permite descargarlos o inspeccionarlos desde la UI
+
       - name: Upload checkpoint artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -132,8 +137,9 @@ jobs:
           path: |
             catalog_checkpoint.json
             az_checkpoint.json
+            ficha_checkpoint.json
           retention-days: 7
-          if-no-files-found: ignore
+          if-no-files-found: ignore    
 
       # ── 9. Guardar los JSON generados en el repositorio ──────
       # 🟢 NUEVO: Configura Git local, detecta la carpeta catalog y sube los cambios al repo
@@ -142,7 +148,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add catalog/ slugs/ 2>/dev/null || true
-          git commit -m "Automated update: JSON catalog updates [skip ci]" || echo "No new changes to commit"
+          [ -d catalog ] && git add catalog/ || true
+          [ -d slugs ]   && git add slugs/   || true
+          git diff --cached --quiet && echo "No new changes to commit" || \
+            git commit -m "Automated update: JSON catalog updates [skip ci]"
           git pull --rebase origin main
           git push
